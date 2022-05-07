@@ -1,10 +1,11 @@
 import { SubmitFeedbackUseCase } from "./submit-feedback-use-case"
 
 const createFeedbackSpy = jest.fn()
+const getFeedbacksSpy = jest.fn()
 const sendMailSpy = jest.fn()
 
 const submitFeedback = new SubmitFeedbackUseCase(
-    { create: createFeedbackSpy },
+    { create: createFeedbackSpy, get: getFeedbacksSpy },
     { sendMail: sendMailSpy },
 )
 
